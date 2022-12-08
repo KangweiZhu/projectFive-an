@@ -98,14 +98,17 @@ public class CurrentOrderActivity extends AppCompatActivity {
         placeOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println(generateOrderInfo());
-                storeOrders.add(generateOrderInfo());
+                if (pizzaList.size() == 0 ){
+                    return;
+                }
                 Intent intent = getIntent();
+                storeOrders = intent.getStringArrayListExtra("storeOrders");
+                storeOrders.add(generateOrderInfo());
                 intent.putExtra("storeOrders",storeOrders);
                 intent.putExtra("orderNum",orderNum);
                 intent.putStringArrayListExtra("pizzaLst",null);
                 intent.putExtra("subtotals",0.00);
-                intent.putExtra("orderTotal",0.00);
+                intent.putExtra("orderTotal",orderT);
                 intent.putExtra("salesTax",0.00);
                 setResult(RESULT_OK, intent);
                 finish();
@@ -187,7 +190,6 @@ public class CurrentOrderActivity extends AppCompatActivity {
         for (int i = 0; i < pizzaList.size(); i++) {
             res += "\n" + "   ";
             res += pizzaList.get(i);
-
         }
         return res;
     }

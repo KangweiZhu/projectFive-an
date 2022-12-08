@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/soOrderNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="18dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:text="Order Number"
-        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
-        app:layout_constraintEnd_toStartOf="@+id/orderSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/orderText"
+        app:layout_constraintEnd_toStartOf="@+id/orderNumSpinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soBackButton" />
 
@@ -25,20 +25,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="16dp"
         android:text="Back"
         app:layout_constraintBottom_toTopOf="@+id/soOrderNum"
+        app:layout_constraintEnd_toStartOf="@+id/orderNumSpinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/orderSpinner"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="382dp"
-        app:layout_constraintBottom_toTopOf="@+id/clearOrderButton"
+        android:id="@+id/orderNumSpinner"
+        android:layout_width="208dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/orderText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/soOrderNum"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,45 +49,49 @@
         android:id="@+id/soOrderTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="35dp"
         android:text="Order total (tax included)"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clearOrderButton" />
+        app:layout_constraintTop_toBottomOf="@+id/exportButton" />
 
     <Button
         android:id="@+id/exportButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="54dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="18dp"
         android:text="Export Store Orders"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/soOrderTotal"
         app:layout_constraintEnd_toStartOf="@+id/clearOrderButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
+        app:layout_constraintTop_toBottomOf="@+id/orderText" />
 
     <Button
         android:id="@+id/clearOrderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Clear Store Orders"
-        app:layout_constraintBottom_toTopOf="@+id/soOrderTotal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/exportButton"
-        app:layout_constraintTop_toBottomOf="@+id/orderSpinner" />
-
-    <ListView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/exportButton"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="73dp"
+        android:text="Clear Store Orders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/exportButton"
+        app:layout_constraintTop_toBottomOf="@+id/orderText" />
+
+    <TextView
+        android:id="@+id/orderText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="19dp"
+        android:text="No orders. Add one to view it."
+        app:layout_constraintBottom_toTopOf="@+id/clearOrderButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soOrderNum" />
+        app:layout_constraintTop_toBottomOf="@+id/orderNumSpinner" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
