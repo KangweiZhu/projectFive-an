@@ -319,7 +319,7 @@ public class NewYorkPizzaActivity extends AppCompatActivity {
      * This method is used for updating the price after new selections are made.
      */
     private void updatePrice(double newPrice) {
-        DecimalFormat df = new DecimalFormat("00.##");
+        DecimalFormat df = new DecimalFormat("0.##");
         String res = df.format(newPrice);
         if (size == null) {
             price.setText("Pizza Price $: " + 0.00);
@@ -344,6 +344,7 @@ public class NewYorkPizzaActivity extends AppCompatActivity {
                 }
                 pizzaList.add(curPizza.toString());
                 intent.putExtra("pizzalst",pizzaList);
+                intent.putExtra("subtotal",curPizza.price());
                 setResult(RESULT_OK,intent);
                 finish();
             }

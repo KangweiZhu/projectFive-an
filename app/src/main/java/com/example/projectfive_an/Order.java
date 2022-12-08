@@ -79,6 +79,9 @@ public class Order implements Customizable {
         }
     }
 
+    public void setStringList(ArrayList<String> newPizzas){
+        this.pizzaArrayListStringed = newPizzas;
+    }
     /**
      * Get the pizzaArrayList.
      *
@@ -88,6 +91,9 @@ public class Order implements Customizable {
         return pizzaArrayList;
     }
 
+    public void setOrderNumber(int orderNumber){
+        this.orderNumber = orderNumber;
+    }
     /**
      * Get the String type pizzaArrayList.
      *

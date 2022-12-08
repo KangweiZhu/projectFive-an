@@ -18,11 +18,15 @@ public class MainActivity extends AppCompatActivity {
     private ImageView currentOrderImageView;
     private Order currentOrder;
     private StoreOrders storeOrders;
-    private String PIZZA_STRINGLIST_KEY = "pizza_stringed_arrayList";
-    private String PIZZA_LIST_KEY;
     private String ORDER_NUMBER;
     private ArrayList<String> allPizzas = new ArrayList<String>();
-
+    private ArrayList<Double> subtotals = new ArrayList<Double>();
+    private double subtotal = 0.00;
+    private double orderTotal = 0.00;
+    private double clearButton = 0.00;
+    private int orderNumber = 0;
+    private double salesTax = 0.00;
+    private double[] sbList = changeLst(subtotals);
     /**
      * Default constructor.
      */
@@ -63,9 +67,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent curOrderTrigger = new Intent(getApplication(),CurrentOrderActivity.class);
-                curOrderTrigger.putStringArrayListExtra(PIZZA_STRINGLIST_KEY,currentOrder.
+                curOrderTrigger.putStringArrayListExtra("pizzaLst",currentOrder.
                         getPizzaArrayListStringed());
-                startActivity(curOrderTrigger);
+                curOrderTrigger.putExtra("orderNum",currentOrder.getOrderNumber());
+                curOrderTrigger.putExtra("subtotals",sbList);
+                curOrderTrigger.putExtra("orderTotal",orderTotal);
+                curOrderTrigger.putExtra("salesTax",salesTax);
+                startActivityForResult(curOrderTrigger,2);
             }
         });
     }
@@ -76,6 +84,11 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
                 allPizzas = data.getStringArrayListExtra("pizzalst");
+                currentOrder.setStringList(allPizzas);
+                subtotal = data.getDoubleExtra("subtotal",0.00);
+                subtotals.add(subtotal);
+                orderTotal += subtotal;
+                salesTax = orderTotal * (6.625 / 100);
             }
         }
     }
@@ -85,10 +98,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.currentOrder = new Order();
+        currentOrder.setOrderNumber(orderNumber);
         this.storeOrders = new StoreOrders();
         clickEvents();
     }
 
-
-
+    private double[] changeLst(ArrayList<Double> doubles){
+        double[] res = new double[doubles.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = doubles.get(i);
+        }
+        return res;
+    }
 }
