@@ -6,4 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".StoreOrdersActivity">
 
+    <TextView
+        android:id="@+id/storeOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Store Orders"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="45dp" />
+
+    <Button
+        android:id="@+id/soBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="46dp" />
+
+    <TextView
+        android:id="@+id/soOrderNumber"
+        android:layout_width="109dp"
+        android:layout_height="41dp"
+        android:text="Order Number"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <Spinner
+        android:id="@+id/orderSpinner"
+        android:layout_width="229dp"
+        android:layout_height="49dp"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="145dp" />
+
+    <TextView
+        android:id="@+id/soOrderTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order total (tax included)"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="696dp" />
+
+    <Button
+        android:id="@+id/exportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Export Store Orders"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+    <Button
+        android:id="@+id/clearOrderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear Store Orders"
+        tools:layout_editor_absoluteX="222dp"
+        tools:layout_editor_absoluteY="535dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
