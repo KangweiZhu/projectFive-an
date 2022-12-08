@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">projectFive-an</string>
+    <string name="small">small</string>
+    <string name="medium">medium</string>
+    <string name="large">large</string>
+    <string name="flavor">flavor</string>
+    <string name="title">title</string>
+</resources>
