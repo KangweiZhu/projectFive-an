@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private int orderNumber = 0;
     private double salesTax = 0.00;
     private double[] sbList = changeLst(subtotals);
+    private ArrayList<String> storeOrder = new ArrayList<>();
     /**
      * Default constructor.
      */
@@ -59,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent storeTrigger = new Intent(getApplication(),StoreOrdersActivity.class);
-                startActivity(storeTrigger);
+
+                startActivityForResult(storeTrigger,3);
             }
         });
         currentOrderImageView = (ImageView) findViewById(R.id.currentOrderImageView);
@@ -67,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent curOrderTrigger = new Intent(getApplication(),CurrentOrderActivity.class);
-                curOrderTrigger.putStringArrayListExtra("pizzaLst",currentOrder.
-                        getPizzaArrayListStringed());
+                curOrderTrigger.putStringArrayListExtra("pizzaLst",allPizzas);
                 curOrderTrigger.putExtra("orderNum",currentOrder.getOrderNumber());
+                sbList = changeLst(subtotals);
                 curOrderTrigger.putExtra("subtotals",sbList);
                 curOrderTrigger.putExtra("orderTotal",orderTotal);
                 curOrderTrigger.putExtra("salesTax",salesTax);
@@ -89,6 +91,24 @@ public class MainActivity extends AppCompatActivity {
                 subtotals.add(subtotal);
                 orderTotal += subtotal;
                 salesTax = orderTotal * (6.625 / 100);
+            }
+        }
+        if (requestCode == 2){
+            if (resultCode == -111){
+                allPizzas = data.getStringArrayListExtra("pizzaLst");
+                orderNumber = data.getIntExtra("orderNum",0);
+                sbList = data.getDoubleArrayExtra("subtotals");
+                orderTotal = data.getDoubleExtra("orderTotal",0.00);
+                salesTax = data.getDoubleExtra("salesTax",0.00);
+            }else if (resultCode == RESULT_OK){
+                Intent intent = data;
+                storeOrder = intent.getStringArrayListExtra("storeOrders");
+                orderNumber = intent.getIntExtra("orderNum",0);
+                allPizzas = new ArrayList<>();
+                sbList = new double[0];
+                orderTotal = intent.getDoubleExtra("orderTotal",0.00);
+                salesTax = intent.getDoubleExtra("salesTax",0.00);
+                setResult(RESULT_OK, intent);
             }
         }
     }
