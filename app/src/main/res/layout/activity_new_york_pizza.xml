@@ -25,24 +25,27 @@
         android:text="New York Style Pizza"
         app:layout_constraintBottom_toTopOf="@+id/sizeDescription"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backButton" />
+        app:layout_constraintTop_toTopOf="@+id/backButton"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pizzaChoosing"
-        android:layout_width="121dp"
-        android:layout_height="202dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="119dp"
+        android:layout_height="198dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="43dp"
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/toppingSelection"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sizeDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/sizeDescription"
+        app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
         android:id="@+id/sizeGroup"
-        android:layout_width="0dp"
-        android:layout_height="97dp"
+        android:layout_width="229dp"
+        android:layout_height="151dp"
         android:layout_marginStart="38dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="38dp"
@@ -56,18 +59,21 @@
             android:id="@+id/smallButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:text="@string/small" />
 
         <RadioButton
             android:id="@+id/mediumButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:text="medium" />
 
         <RadioButton
             android:id="@+id/largeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:text="large" />
     </RadioGroup>
 
@@ -75,8 +81,8 @@
         android:id="@+id/sizeDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="64dp"
         android:text="Size Option"
         app:layout_constraintEnd_toEndOf="@+id/newYorkTitle"
         app:layout_constraintTop_toTopOf="parent" />
@@ -104,9 +110,9 @@
 
     <TextView
         android:id="@+id/crustDescription"
-        android:layout_width="61dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="38dp"
+        android:layout_width="135dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="24dp"
         android:text="Crust: "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pizzaChoosing"
