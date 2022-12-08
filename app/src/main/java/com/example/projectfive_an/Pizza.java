@@ -114,4 +114,29 @@ public abstract class Pizza implements Customizable {
     public void setSize(Size size) {
         this.size = size;
     }
+
+    /**
+     * Get the information of pizza.
+     *
+     * @return The String typed information of that pizza.
+     */
+    @Override
+    public String toString() {
+        String listViewText = "";
+        if (this instanceof Deluxe) {
+            listViewText += ("Deluxe (New York Style - " + this.getCrust().getCrustText() + "), ");
+        } else if (this instanceof BBQChicken) {
+            listViewText += ("BBQ Chicken (New York Style - " + this.getCrust().getCrustText() + "), ");
+        } else if (this instanceof Meatzza) {
+            listViewText += ("Meatzza (New York Style - " + this.getCrust().getCrustText() + "), ");
+        } else if (this instanceof BuildYourOwn) {
+            listViewText += ("Build Your Own (New York Style - " + this.getCrust().getCrustText() + "), ");
+        }
+        for (Topping topping : this.getSelectedToppings()) {
+            listViewText += (topping.getToppingText() + (", "));
+        }
+        listViewText += (this.getSize().getSizeText() + (" "));
+        listViewText += ("$" + this.price());
+        return listViewText;
+    }
 }

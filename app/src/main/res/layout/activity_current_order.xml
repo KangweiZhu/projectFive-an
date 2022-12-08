@@ -6,4 +6,82 @@
     android:layout_height="match_parent"
     tools:context=".CurrentOrderActivity">
 
+    <TextView
+        android:id="@+id/currentOrderTitile"
+        android:layout_width="192dp"
+        android:layout_height="41dp"
+        android:text="Current Order"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="85dp" />
+
+    <Button
+        android:id="@+id/coBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="37dp" />
+
+    <TextView
+        android:id="@+id/orderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Number:"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="178dp" />
+
+    <ListView
+        android:id="@+id/currentOrderList"
+        android:layout_width="390dp"
+        android:layout_height="410dp"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="222dp" />
+
+    <TextView
+        android:id="@+id/subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtotal $:"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="659dp" />
+
+    <TextView
+        android:id="@+id/orderTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="orderTotal $:"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="696dp" />
+
+    <TextView
+        android:id="@+id/salesTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sales Tax $:"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="656dp" />
+
+    <Button
+        android:id="@+id/removePizzaButton"
+        android:layout_width="220dp"
+        android:layout_height="37dp"
+        android:text="Remove Pizza"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="696dp" />
+
+    <Button
+        android:id="@+id/placeOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place Order"
+        tools:layout_editor_absoluteX="303dp"
+        tools:layout_editor_absoluteY="648dp" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="81dp"
+        android:layout_height="39dp"
+        android:text="Clear"
+        tools:layout_editor_absoluteX="322dp"
+        tools:layout_editor_absoluteY="155dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

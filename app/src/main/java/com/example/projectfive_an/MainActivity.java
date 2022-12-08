@@ -2,10 +2,14 @@ package com.example.projectfive_an;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView chicagoPizzaImageView;
@@ -17,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private String PIZZA_STRINGLIST_KEY = "pizza_stringed_arrayList";
     private String PIZZA_LIST_KEY;
     private String ORDER_NUMBER;
+    private ArrayList<String> allPizzas = new ArrayList<String>();
 
     /**
      * Default constructor.
@@ -41,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent nyTrigger = new Intent(getApplicationContext(), NewYorkPizzaActivity.class);
-                startActivity(nyTrigger);
+                nyTrigger.putExtra("PizzaList",allPizzas);
+                startActivityForResult(nyTrigger,1);
             }
         });
         storeOrdersImageView = (ImageView) findViewById(R.id.storeOrdersImageView);
@@ -65,6 +71,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                allPizzas = data.getStringArrayListExtra("pizzalst");
+            }
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -72,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         this.storeOrders = new StoreOrders();
         clickEvents();
     }
+
 
 
 }
