@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CurrentOrderActivity">
 
-    <TextView
-        android:id="@+id/currentOrderTitile"
-        android:layout_width="192dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="52dp"
-        android:text="Current Order"
-        app:layout_constraintBottom_toTopOf="@+id/orderNumber"
-        app:layout_constraintEnd_toEndOf="@+id/removePizzaButton"
-        app:layout_constraintStart_toEndOf="@+id/coBackButton"
-        app:layout_constraintTop_toTopOf="@+id/coBackButton" />
-
     <Button
         android:id="@+id/coBackButton"
         android:layout_width="wrap_content"
@@ -34,12 +20,9 @@
         android:id="@+id/orderNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="178dp"
-        android:layout_marginEnd="220dp"
+        android:layout_marginTop="135dp"
         android:text="Order Number:"
-        app:layout_constraintEnd_toStartOf="@+id/clearButton"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/currentOrderList"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
@@ -47,10 +30,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="9dp"
-        android:layout_marginBottom="43dp"
-        app:layout_constraintBottom_toBottomOf="@+id/salesTax"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/subtotal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/orderNumber" />
@@ -59,65 +42,61 @@
         android:id="@+id/subtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginBottom="79dp"
         android:text="Subtotal $:"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/currentOrderList" />
 
     <TextView
         android:id="@+id/orderTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="95dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="52dp"
         android:text="orderTotal $:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/removePizzaButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/currentOrderList"
+        app:layout_constraintStart_toEndOf="@+id/salesTax"
+        app:layout_constraintTop_toBottomOf="@+id/currentOrderList" />
 
     <TextView
         android:id="@+id/salesTax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="21dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="1dp"
         android:text="Sales Tax $:"
-        app:layout_constraintBottom_toTopOf="@+id/removePizzaButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/clearButton"
+        app:layout_constraintTop_toBottomOf="@+id/currentOrderList" />
 
     <Button
         android:id="@+id/removePizzaButton"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="3dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="1dp"
         android:text="Remove Pizza"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/orderTotal"
-        app:layout_constraintTop_toBottomOf="@+id/placeOrder" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/clearButton"
+        app:layout_constraintEnd_toStartOf="@+id/clearButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/placeOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="35dp"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="9dp"
         android:text="Place Order"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/removePizzaButton" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/clearButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/clearButton" />
 
     <Button
         android:id="@+id/clearButton"
         android:layout_width="0dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="28dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="5dp"
         android:text="Clear"
-        app:layout_constraintBottom_toTopOf="@+id/currentOrderList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/orderNumber"
-        app:layout_constraintTop_toBottomOf="@+id/currentOrderTitile" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/placeOrder"
+        app:layout_constraintStart_toEndOf="@+id/removePizzaButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

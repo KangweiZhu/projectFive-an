@@ -15,7 +15,6 @@
         <activity android:name=".StoreOrdersActivity"></activity>
         <activity android:name=".CurrentOrderActivity" />
         <activity android:name=".NewYorkPizzaActivity" />
-        <activity android:name=".ChicagoPizaaActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

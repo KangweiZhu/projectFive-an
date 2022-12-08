@@ -17,7 +17,6 @@ import java.util.ArrayList;
 
 
 public class CurrentOrderActivity extends AppCompatActivity {
-    private TextView currentOrderTitle;
     private Button coBackButton;
     private TextView orderNumber;
     private ListView currentOrderList;
@@ -45,7 +44,6 @@ public class CurrentOrderActivity extends AppCompatActivity {
      * This method setting up the UI for the current order page view.
      */
     private void initializeUI() {
-        currentOrderTitle = findViewById(R.id.currentOrderTitile);
         coBackButton = findViewById(R.id.coBackButton);
         orderNumber = findViewById(R.id.orderNumber);
         currentOrderList = findViewById(R.id.currentOrderList);

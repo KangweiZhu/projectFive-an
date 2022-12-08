@@ -12,7 +12,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView chicagoPizzaImageView;
     private ImageView newYorkPizzImageView;
     private ImageView storeOrdersImageView;
     private ImageView currentOrderImageView;
@@ -37,15 +36,6 @@ public class MainActivity extends AppCompatActivity {
      * General method for handle the clicking events.
      */
     private void clickEvents(){
-        chicagoPizzaImageView = (ImageView) findViewById(R.id.chicagoPizzaImageView);
-        chicagoPizzaImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent chicagoTrigger = new Intent(getApplicationContext(),
-                        ChicagoPizaaActivity.class);
-                startActivity(chicagoTrigger);
-            }
-        });
         newYorkPizzImageView = (ImageView) findViewById(R.id.newYorkPizzaImageView);
         newYorkPizzImageView.setOnClickListener(new View.OnClickListener() {
             @Override

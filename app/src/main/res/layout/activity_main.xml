@@ -9,9 +9,12 @@
     <ImageView
         android:id="@+id/storeOrdersImageView"
         android:layout_width="0dp"
-        android:layout_height="133dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="51dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/currentOrderImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/currentOrderImageView"
@@ -21,65 +24,45 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginBottom="63dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="35dp"
         android:text="Store Orders"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/storeOrdersImageView"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/currentOrderImageView"
         android:layout_width="0dp"
-        android:layout_height="144dp"
-        android:layout_marginTop="139dp"
+        android:layout_height="230dp"
         android:layout_marginEnd="3dp"
-        android:layout_marginBottom="137dp"
+        android:layout_marginBottom="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/storeOrdersImageView"
-        app:layout_constraintTop_toBottomOf="@+id/chicagoPizzaImageView"
         app:srcCompat="@drawable/store_orders" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="44dp"
         android:text="current order"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/chicagoPizzaImageView"
-        android:layout_width="0dp"
-        android:layout_height="111dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="46dp"
-        app:layout_constraintEnd_toStartOf="@+id/newYorkPizzaImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/newYorkPizzaImageView"
-        app:srcCompat="@drawable/cs_meatzza" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="23dp"
-        android:text="Chicago Style Pizza"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chicagoPizzaImageView" />
+        app:layout_constraintEnd_toEndOf="@+id/currentOrderImageView"
+        app:layout_constraintStart_toStartOf="@+id/currentOrderImageView"
+        app:layout_constraintTop_toBottomOf="@+id/currentOrderImageView" />
 
     <ImageView
         android:id="@+id/newYorkPizzaImageView"
         android:layout_width="0dp"
-        android:layout_height="126dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/chicagoPizzaImageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ny_style_pizza" />
 
@@ -87,9 +70,9 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginBottom="79dp"
         android:text="Choose Your Pizza"
-        app:layout_constraintStart_toStartOf="@+id/newYorkPizzaImageView"
-        app:layout_constraintTop_toBottomOf="@+id/newYorkPizzaImageView" />
+        app:layout_constraintBottom_toTopOf="@+id/currentOrderImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

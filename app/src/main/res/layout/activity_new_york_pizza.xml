@@ -10,50 +10,47 @@
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Back"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/newYorkTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/newYorkTitle"
-        android:layout_width="166dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="New York Style Pizza"
-        app:layout_constraintBottom_toTopOf="@+id/sizeDescription"
+        app:layout_constraintBottom_toTopOf="@+id/pizzaChoosing"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pizzaChoosing"
-        android:layout_width="119dp"
-        android:layout_height="198dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toppingSelection"
+        android:layout_width="0dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="39dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sizeDescription"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sizeDescription"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
 
     <RadioGroup
         android:id="@+id/sizeGroup"
-        android:layout_width="229dp"
+        android:layout_width="0dp"
         android:layout_height="151dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="53dp"
-        app:layout_constraintBottom_toTopOf="@+id/crustDescription"
+        android:layout_marginTop="157dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="157dp"
+        app:layout_constraintBottom_toTopOf="@+id/price"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pizzaChoosing"
-        app:layout_constraintTop_toTopOf="@+id/sizeDescription">
+        app:layout_constraintStart_toStartOf="@+id/sizeDescription"
+        app:layout_constraintTop_toTopOf="@+id/pizzaChoosing">
 
         <RadioButton
             android:id="@+id/smallButton"
@@ -81,20 +78,19 @@
         android:id="@+id/sizeDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="64dp"
         android:text="Size Option"
-        app:layout_constraintEnd_toEndOf="@+id/newYorkTitle"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/crustDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
         android:id="@+id/realToppings"
         android:layout_width="327dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="51dp"
-        app:layout_constraintBottom_toTopOf="@+id/addToCart"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/price"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toppingSelection" />
 
@@ -103,27 +99,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginBottom="11dp"
         android:text="Select Toppings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crustDescription" />
+        app:layout_constraintBottom_toBottomOf="@+id/sizeGroup"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/crustDescription"
-        android:layout_width="135dp"
+        android:layout_width="0dp"
         android:layout_height="43dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="15dp"
         android:text="Crust: "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pizzaChoosing"
+        app:layout_constraintEnd_toStartOf="@+id/sizeGroup"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:text="Pizza Price $"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -132,10 +130,10 @@
         android:id="@+id/addToCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="252dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="4dp"
         android:text="Add To Order Cart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
